@@ -1,17 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  background: #f1f1f1;
-  color: #0f141e;
+	box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+  margin: 0;
+	height: 100vh;
+	display: flex;
+}
+.container1 {
+	width: 100%;
+	display: flex;
+	padding: 0 20px;
+}
+
+.slide {
+	height: 80vh;
+	border-radius: 20px;
+	margin: 10px;
+	cursor: pointer;
+	color: white;
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	transition: all 500ms ease-in-out;
+}
+
+.slide h3 {
+	position: absolute;
+	font-size: 24px;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	opacity: 0;
+}
+
+.slide.active {
+	flex: 10;
+
+}
+
+.slide.active h3 {
+	opacity: 1;
+	transition: opacity 0.3s ease-in 0.4s;
+
 }
 
 a {
   color: #000;
   text-decoration: none;
 }
+.connect {
+	margin-left: 245px;
+	display: flex;
+	font-size: 50px;
+	}
 
 a:hover {
   text-decoration: underline;
@@ -57,6 +101,10 @@ a:visited {
   margin-bottom: 10px;
 }
 
+
+
+
+
 @media (max-width: 650px) {
   .info {
     display: block;
@@ -64,6 +112,11 @@ a:visited {
   }
 }
 
+.connect {
+	margin-left: 205px;
+	display: flex;
+	font-size: 50px;
+	}
 .card {
   border-radius: 20px;
   padding: 15px 20px;
@@ -77,27 +130,17 @@ a:visited {
 .bg-yellow {
   background: #fff9dc;
 }
-
+.bg-violet {
+	background:  #a477d170;
+	margin-top: 40px;
+}
 .bg-red {
   background: #ffe5e5;
 }
 
 .bg-green {
   background: #e5ffe7;
-}
-
-.btn {
-  background: #111;
-  padding: 15px 20px;
-  color: #fff;
-  border: none;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 0.8;
-}
+}	
 
 .list {
   padding: 0 20px;
@@ -119,19 +162,6 @@ a:visited {
   padding-bottom: 5px;
 }
 
-.table {
-  width: 100%;
-}
-
-.table td {
-  padding-bottom: 10px;
-}
-
-.table td:nth-child(2),
-.table td:nth-child(3) {
-  color: #86898f;
-}
-
 .form h2 {
   text-align: center;
 }
@@ -141,44 +171,89 @@ a:visited {
   display: flex;
 }
 
-.form-row .form-group {
-  margin-right: 20px;
-  width: 50%;
-  /* display: inline-block; */
-  /* width: calc(50% - 20px); */
+
+@media (max-width: 480px) {
+	.connect {
+		margin-left: 114px;
+		display: flex;
+		font-size: 50px;
+		}
 }
 
-.form-row .form-group:last-child {
-  margin-right: 0;
+
+.row {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 650px) {
-  .form-row {
-    display: block;
-  }
-
-  .form-row .form-group {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+.col-header {
+  width: 150px;
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  color: #fff;
 }
 
-.form-group label {
-  display: block;
-  font-size: 14px;
-  color: #86898f;
+.item {
+  width: 150px;
+  height: 34px;
+  border: 1px solid #eee;
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  border-radius: 20px;
+  background: #f7f6f7;
+  padding: 0.8rem 1rem;
+  color: #828282;
+  text-align: center;
+  cursor: grab;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid #ccc;
-  color: #000;
-  padding: 15px 0 10px;
-  outline: none;
-  font-family: inherit;
+.item:active {
+  cursor: grabbing;
+}
+
+.placeholder {
+  width: 150px;
+  height: 66px;
+}
+
+.start {
+  background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
+}
+
+.progress {
+  background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
+}
+
+.done {
+  background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+}
+.hold {
+	box-shadow: rgba(106, 0, 255, 0.408) 0px 30px 60px -30px, rgba(160, 123, 213, 0.386) 0px 30px 60px -30px inset;
+}
+.hide {
+	display: none;
+}
+.hovered {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.container4 {
+	position: relative;
+	display: flex;
+	max-width: 400px;
+	flex-wrap: wrap;
+	left: 100px;
+}
+.square {
+	width: 16px;
+	height: 16px;
+	background-color: #1d1d1d;
+	margin: 2px;
+	box-shadow: 0 0 2px #000;
+	transition: 2s ease;
+}
+
+.square:hover {
+	transition-duration: 0s;
 }
